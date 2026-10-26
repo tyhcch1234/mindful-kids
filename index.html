@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>心晴小星球 · 小三正向思維與靜心練習</title>
+<meta name="description" content="為小學三年級學生而設的正向思維與靜心（Mindfulness）互動網站：彩虹呼吸、身體掃描、專注小遊戲、感恩日記、正向想法卡與廣東話影片。">
+<meta name="theme-color" content="#eaf6ff">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;600;800&family=Baloo+2:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- 背景裝飾 -->
+<div class="sky" aria-hidden="true">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <span class="spark s1">✦</span><span class="spark s2">✦</span><span class="spark s3">✧</span>
+  <span class="spark s4">✦</span><span class="spark s5">✧</span>
+</div>
+
+<header class="topbar">
+  <a class="brand" href="#home" data-nav="home">
+    <span class="brand-face" aria-hidden="true">🌤️</span>
+    <span class="brand-text">
+      <strong>心晴小星球</strong>
+      <small>小三 · 正向思維 × 靜心</small>
+    </span>
+  </a>
+  <div class="topbar-right">
+    <div class="star-pill" id="starPill" title="你收集到的星星">
+      <span aria-hidden="true">⭐</span><strong id="starCount">0</strong>
+      <span class="sr-only">粒星星</span>
+    </div>
+    <button class="icon-btn" id="soundBtn" aria-pressed="true" title="開／關音效">🔔</button>
+    <button class="icon-btn" id="voiceBtn" aria-pressed="true" title="開／關語音導航">🗣️</button>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="活動選擇">
+  <button class="tab is-active" data-nav="home">🏠 首頁</button>
+  <button class="tab" data-nav="breathe">🌈 彩虹呼吸</button>
+  <button class="tab" data-nav="body">🧘 身體掃描</button>
+  <button class="tab" data-nav="focus">🎯 專注遊戲</button>
+  <button class="tab" data-nav="gratitude">💛 感恩日記</button>
+  <button class="tab" data-nav="mindset">🌱 正向想法</button>
+  <button class="tab" data-nav="videos">🎬 影片區</button>
+  <button class="tab" data-nav="awards">🏅 我的成就</button>
+</nav>
+
+<main id="main">
+
+  <!-- ============ 首頁 ============ -->
+  <section class="view is-active" id="view-home" aria-labelledby="homeTitle">
+    <div class="hero">
+      <div class="hero-copy">
+        <p class="kicker">每日 5 分鐘 · 心情靚啲</p>
+        <h1 id="homeTitle">歡迎嚟到<br><span class="rainbow-text">心晴小星球</span></h1>
+        <p class="lead">喺呢個星球，你可以學識：慢慢呼吸、留意身體、專心做事、欣賞身邊嘅小美好。<br>準備好未？揀一個活動開始啦！</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-nav="breathe">🌈 開始彩虹呼吸</button>
+          <button class="btn btn-ghost" data-nav="videos">🎬 睇一段影片</button>
+        </div>
+        <p class="hero-note">💡 建議：每日返學前或放學後，做 1 個練習，儲滿 20 粒星星就有大獎章！</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="planet">
+          <div class="planet-face">
+            <span class="eye"></span><span class="eye"></span>
+            <span class="smile"></span>
+            <span class="cheek c1"></span><span class="cheek c2"></span>
+          </div>
+          <span class="ring"></span>
+        </div>
+        <span class="orbit o1">🌈</span>
+        <span class="orbit o2">⭐</span>
+        <span class="orbit o3">🌱</span>
+      </div>
+    </div>
+
+    <h2 class="section-title">今日想做啲咩？</h2>
+    <div class="cards" id="homeCards">
+      <button class="card card-breathe" data-nav="breathe">
+        <span class="card-emoji">🌈</span>
+        <span class="card-title">彩虹呼吸</span>
+        <span class="card-desc">跟住個波波，慢慢吸、慢慢呼。</span>
+        <span class="card-tag">放鬆心情</span>
+      </button>
+      <button class="card card-body" data-nav="body">
+        <span class="card-emoji">🧘</span>
+        <span class="card-title">身體掃描</span>
+        <span class="card-desc">由頭到腳，同身體講聲「你好」。</span>
+        <span class="card-tag">覺察身體</span>
+      </button>
+      <button class="card card-focus" data-nav="focus">
+        <span class="card-emoji">🎯</span>
+        <span class="card-title">專注遊戲</span>
+        <span class="card-desc">戳泡泡、記圖卡，訓練專注力。</span>
+        <span class="card-tag">提升專注</span>
+      </button>
+      <button class="card card-grat" data-nav="gratitude">
+        <span class="card-emoji">💛</span>
+        <span class="card-title">感恩日記</span>
+        <span class="card-desc">寫低今日三件開心事。</span>
+        <span class="card-tag">欣賞美好</span>
+      </button>
+      <button class="card card-mind" data-nav="mindset">
+        <span class="card-emoji">🌱</span>
+        <span class="card-title">正向想法</span>
+        <span class="card-desc">「我唔識」變成「我仲未學識」。</span>
+        <span class="card-tag">轉個念頭</span>
+      </button>
+      <button class="card card-video" data-nav="videos">
+        <span class="card-emoji">🎬</span>
+        <span class="card-title">影片區</span>
+        <span class="card-desc">廣東話故事同靜心動畫。</span>
+        <span class="card-tag">一齊睇</span>
+      </button>
+    </div>
+
+    <div class="quote-box">
+      <p id="dailyQuote">「慢慢呼一口氣，你就會發現，心入面有個好安靜嘅地方。」</p>
+      <button class="btn btn-small btn-ghost" id="newQuoteBtn">🔄 換一句</button>
+    </div>
+  </section>
+
+  <!-- ============ 彩虹呼吸 ============ -->
+  <section class="view" id="view-breathe" aria-labelledby="breatheTitle">
+    <h1 class="view-title" id="breatheTitle">🌈 彩虹呼吸</h1>
+    <p class="view-sub">跟住個圓圈：<strong>吸氣 4 秒 → 停 2 秒 → 呼氣 6 秒</strong>。做 5 個循環，就有一粒星星。</p>
+
+    <div class="breathe-stage">
+      <div class="breathe-ring" id="breatheRing">
+        <div class="breathe-ball" id="breatheBall">
+          <span class="breathe-phase" id="breathePhase">準備</span>
+          <span class="breathe-count" id="breatheCount">🌬️</span>
+        </div>
+      </div>
+      <p class="breathe-hint" id="breatheHint">按「開始」，然後慢慢跟住個波波。</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><span class="stat-num" id="breathCycles">0</span><span class="stat-label">已完成循環</span></div>
+      <div class="stat"><span class="stat-num" id="breathSessionBest">0</span><span class="stat-label">最佳循環</span></div>
+      <div class="stat"><span class="stat-num" id="breathSessions">0</span><span class="stat-label">練習次數</span></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="breathStart">▶ 開始</button>
+      <button class="btn btn-ghost" id="breathStop" disabled>■ 停止</button>
+    </div>
+
+    <div class="tip-card">
+      <h3>小貼士</h3>
+      <ul>
+        <li>坐直，雙手放喺大脾上面，腳板踩實地下。</li>
+        <li>用鼻吸氣，可以幻想聞到檸檬味；用口慢慢呼氣，好似吹蠟燭咁。</li>
+        <li>如果分心咗，唔緊要 — 只係溫柔咁返去數呼吸就得。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 身體掃描 ============ -->
+  <section class="view" id="view-body" aria-labelledby="bodyTitle">
+    <h1 class="view-title" id="bodyTitle">🧘 身體小掃描</h1>
+    <p class="view-sub">閂埋眼，跟住提示，由頭到腳慢慢感受身體。整個過程大約 3 分鐘。</p>
+
+    <div class="scan-wrap">
+      <div class="scan-progress"><div class="scan-bar" id="scanBar"></div></div>
+      <p class="scan-step-label" id="scanStepLabel">第 1 / 7 步</p>
+      <div class="scan-card" id="scanCard">
+        <span class="scan-emoji" id="scanEmoji">🙂</span>
+        <h2 id="scanTitle">準備好未？</h2>
+        <p id="scanText">坐得舒服啲，雙手放喺大脾，慢慢吸一口氣，然後呼氣。準備同身體打招呼。</p>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" id="scanPrev" disabled>← 上一步</button>
+        <button class="btn btn-primary" id="scanPlay">🔊 聽住做</button>
+        <button class="btn btn-ghost" id="scanNext">下一步 →</button>
+      </div>
+      <p class="scan-auto-note" id="scanNote">提示：可以請老師或家長一齊做。</p>
+    </div>
+  </section>
+
+  <!-- ============ 專注遊戲 ============ -->
+  <section class="view" id="view-focus" aria-labelledby="focusTitle">
+    <h1 class="view-title" id="focusTitle">🎯 專注小遊戲</h1>
+    <p class="view-sub">專注，就係「一次只做一件事」。揀一個遊戲試試！</p>
+
+    <div class="game-switch" role="tablist" aria-label="遊戲選擇">
+      <button class="chip is-active" data-game="bubbles" role="tab" aria-selected="true">🌈 靜心泡泡</button>
+      <button class="chip" data-game="memory" role="tab" aria-selected="false">🃏 記憶花園</button>
+    </div>
+
+    <div class="game-panel is-active" id="game-bubbles">
+      <div class="game-head">
+        <div class="stat small"><span class="stat-num" id="bubbleScore">0</span><span class="stat-label">已戳泡泡</span></div>
+        <div class="stat small"><span class="stat-num" id="bubbleTime">30</span><span class="stat-label">剩餘秒數</span></div>
+        <button class="btn btn-primary" id="bubbleStart">▶ 開始 30 秒</button>
+      </div>
+      <div class="bubble-arena" id="bubbleArena" aria-label="泡泡遊戲區">
+        <p class="arena-hint" id="arenaHint">按「開始」，然後用手指或滑鼠戳破泡泡。<br>目標：30 秒內戳破 20 個！</p>
+      </div>
+      <p class="game-tip">🌈 小提醒：慢慢嚟，睇清楚先戳，比亂咁快更專注。</p>
+    </div>
+
+    <div class="game-panel" id="game-memory">
+      <div class="game-head">
+        <div class="stat small"><span class="stat-num" id="memoryPairs">0</span><span class="stat-label">已配對</span></div>
+        <div class="stat small"><span class="stat-num" id="memoryTries">0</span><span class="stat-label">嘗試次數</span></div>
+        <button class="btn btn-primary" id="memoryRestart">🔄 重新開始</button>
+      </div>
+      <div class="memory-grid" id="memoryGrid" aria-label="記憶配對卡"></div>
+      <p class="game-tip">🃏 揭開兩張一樣嘅卡就配對成功。記住位置，慢慢嚟。</p>
+    </div>
+  </section>
+
+  <!-- ============ 感恩日記 ============ -->
+  <section class="view" id="view-gratitude" aria-labelledby="gratTitle">
+    <h1 class="view-title" id="gratTitle">💛 感恩小日記</h1>
+    <p class="view-sub">每日寫低 <strong>3 件令你心入面暖暖嘅事</strong>。就算好細件事，都算！</p>
+
+    <div class="grat-wrap">
+      <div class="grat-form">
+        <label class="mood-label">今日心情：</label>
+        <div class="mood-row" id="moodRow" role="group" aria-label="選擇今日心情">
+          <button class="mood" data-mood="好開心" aria-pressed="false">😄<span>好開心</span></button>
+          <button class="mood" data-mood="唔錯" aria-pressed="false">🙂<span>唔錯</span></button>
+          <button class="mood" data-mood="一般" aria-pressed="false">😐<span>一般</span></button>
+          <button class="mood" data-mood="有啲煩" aria-pressed="false">😕<span>有啲煩</span></button>
+          <button class="mood" data-mood="好唔開心" aria-pressed="false">😢<span>好唔開心</span></button>
+        </div>
+
+        <div class="grat-inputs">
+          <label>1. 今日我好感恩……<textarea id="grat1" rows="2" maxlength="120" placeholder="例如：同學借咗擦膠俾我"></textarea></label>
+          <label>2. 今日有一個人對我好好……<textarea id="grat2" rows="2" maxlength="120" placeholder="例如：媽媽煮咗我最鍾意嘅餸"></textarea></label>
+          <label>3. 今日我做得到……<textarea id="grat3" rows="2" maxlength="120" placeholder="例如：我上堂舉手答問題"></textarea></label>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" id="gratSave">💾 儲存今日日記（+2 ⭐）</button>
+          <button class="btn btn-ghost" id="gratListen">🔊 聽我寫嘅嘢</button>
+        </div>
+        <p class="grat-streak" id="gratStreak">連續記錄：0 日 · 總共 0 篇</p>
+      </div>
+
+      <div class="grat-list-wrap">
+        <h3>我嘅日記簿</h3>
+        <ul class="grat-list" id="gratList">
+          <li class="grat-empty">仲未開始寫… 寫完第一篇，呢度就會出現你嘅小紀錄。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 正向想法 ============ -->
+  <section class="view" id="view-mindset" aria-labelledby="mindTitle">
+    <h1 class="view-title" id="mindTitle">🌱 轉個念頭</h1>
+    <p class="view-sub">遇到困難嗰陣，心入面把聲會講啲咩？試下點「卡」張卡，睇睇另一個講法。</p>
+
+    <div class="mind-grid" id="mindGrid"></div>
+
+    <div class="tip-card">
+      <h3>咩係「成長型思維」？</h3>
+      <p>大腦好似肌肉，越練越有力。今日做唔到，唔代表永遠做唔到 — 只係「<strong>仲未</strong>」做得到。<br>
+      下次想講「我唔得」嗰陣，試下加兩個字：「我<strong>仲未</strong>得」。</p>
+    </div>
+
+    <div class="breath-mini">
+      <h3>🌈 一分鐘急救呼吸</h3>
+      <p>心情好亂嘅時候：吸氣 4 秒、呼氣 6 秒，做 6 次。</p>
+      <button class="btn btn-primary" id="miniStart">開始一分鐘</button>
+      <div class="mini-display" id="miniDisplay">準備</div>
+    </div>
+  </section>
+
+  <!-- ============ 影片區 ============ -->
+  <section class="view" id="view-videos" aria-labelledby="videoTitle">
+    <h1 class="view-title" id="videoTitle">🎬 正向影片區</h1>
+    <p class="view-sub">全部影片都係 YouTube 公開影片，用廣東話或簡單英語講解。建議同老師、家長一齊睇。</p>
+
+    <div class="video-filter" role="group" aria-label="影片分類">
+      <button class="chip is-active" data-filter="all">全部</button>
+      <button class="chip" data-filter="cantonese">🗣️ 廣東話</button>
+      <button class="chip" data-filter="mind">🌈 靜心練習</button>
+      <button class="chip" data-filter="positive">🌱 正向思維</button>
+      <button class="chip" data-filter="english">🌍 英文</button>
+    </div>
+
+    <div class="video-grid" id="videoGrid"></div>
+    <p class="video-note">影片來自公開 YouTube 頻道（保良局小學正向、CUHK、Cheers Psy Consultancy、Playapy 等），版權屬原作者所有。</p>
+  </section>
+
+  <!-- ============ 成就 ============ -->
+  <section class="view" id="view-awards" aria-labelledby="awardTitle">
+    <h1 class="view-title" id="awardTitle">🏅 我的成就</h1>
+    <p class="view-sub">每次完成練習都會儲星星。集齊徽章，你就係心晴小星球嘅小隊長！</p>
+
+    <div class="award-summary">
+      <div class="big-star"><span id="awardStars">0</span><small>粒星星</small></div>
+      <div class="big-star"><span id="awardBadges">0</span><small>個徽章</small></div>
+      <button class="btn btn-ghost" id="resetBtn">🔄 重新開始（清除紀錄）</button>
+    </div>
+
+    <div class="badge-grid" id="badgeGrid"></div>
+
+    <div class="tip-card">
+      <h3>俾家長同老師</h3>
+      <p>呢個網站嘅練習參考靜觀（Mindfulness）同正向心理學（Positive Psychology）嘅基礎練習：呼吸覺察、身體掃描、感恩練習、認知重構（成長型思維）。所有紀錄只會儲存喺學生部裝置嘅瀏覽器（localStorage），唔會上傳任何個人資料。建議每次使用 5–10 分鐘，並由成人陪同討論感受。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>🌈 心晴小星球 · 為小學三年級而設的正向思維與靜心練習</p>
+  <p class="tiny">內容僅供教學與放鬆用途，不能代替專業心理輔導。如學生持續情緒困擾，請聯絡學校輔導組或專業人士。</p>
+</footer>
+
+<!-- 星星提示 -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
